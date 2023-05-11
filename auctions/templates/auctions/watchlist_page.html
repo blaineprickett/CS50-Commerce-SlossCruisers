@@ -1,0 +1,46 @@
+{% extends "auctions/layout.html" %}
+{% load humanize %}
+
+{% block styles %}
+  <style>
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container"> <!-- Container div -->
+        <div class="row"> <!-- Row div -->
+            <div class="col-12"> <!-- Column div -->
+                <h2>Watchlist</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card" style="width: 25rem;">
+                        <img class="card-img-top" src="{{ listing.url }}" alt="{{ listing.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ listing.title }}</h5>
+                            <hr>
+                            <p><b><center>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold; background-color: #f0f0f0;">${{ listing.current_bid|intcomma }}</span> from <span class="bid-user">{{ listing.owner.username }}</span></center></p>
+                            <hr>
+                            <p class="card-text">{{ listing.description }}</p></br></br>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between">
+                            <a href="{% url 'display_listing' listing_id=listing.id %}" class="btn btn-primary mr-2 btn-center">Details</a>
+                            <form action="{% url 'remove_watchlist' listing_id=listing.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-outline-danger ml-2">Remove from Watchlist</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+

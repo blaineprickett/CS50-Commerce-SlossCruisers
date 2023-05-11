@@ -1,0 +1,41 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div class="container">
+        <h2>Active Listings in {{ category }} category</h2></br>
+        <form action="{% url 'display_category' %}" method="post">
+            {% csrf_token %} 
+            <label for="Land Cruisers">Choose a category:</label>
+             <select name="category" class="form-select" aria-label="Default select example">
+                  <option selected><a href="#">Open this select menu</a></option>
+                  <option value="FJ40">FJ40</option>
+                  <option value="FJ55">FJ55</option>
+                  <option value="HJ60">HJ60</option>
+                  <option value="FJ60">FJ60</option>
+                  <option value="FJ70">FJ70</option>
+                  <option value="FZJ70">FZJ70</option>
+                  <option value="FJ80">FJ80</option>
+                  <option value="UZJ100">UZJ100</option>
+                  <input type="submit" value="Submit">
+              </select>
+              <br><br>
+          </form>
+        <hr>
+        <div class="row">
+            {% for listing in listings %}
+                <div class="col-sm-3">
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="{{ listing.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ listing.title }}</h5>
+                            <p class="card-text">{{ listing.description }}</p>
+                            <a href="{% url 'display_listing' listing.id %}" class="btn btn-primary">View Listing</a>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No active listings in {{ category }} category.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

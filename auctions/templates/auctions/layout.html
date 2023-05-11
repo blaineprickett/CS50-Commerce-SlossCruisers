@@ -1,0 +1,86 @@
+{% load static %}
+{% load humanize %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Auctions{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'auctions/custom.css' %}" rel="stylesheet">
+        <style>
+            .social-icon {
+                height: 32px;
+                width: 32px;
+                margin-right: 5px;
+                margin-top: 5px;
+            }
+
+            .social-icon:hover {
+                opacity: 0.5;
+            }
+
+            .logo-img:hover {
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="social-container">
+                <div class="float-right">
+                    <img src="{% static 'auctions/images/facebook.png' %}" class="social-icon">
+                    <img src="{% static 'auctions/images/instagram.png' %}" class="social-icon">
+                    <img src="{% static 'auctions/images/tiktok.png' %}" class="social-icon">
+                    <img src="{% static 'auctions/images/twitter-sign.png' %}" class="social-icon">
+                    </br></br></br></br></br></br></br>
+                    {% if user.is_authenticated %}
+                        <span class="signed-in">Signed in as <strong>{{ user.username }}</strong>.</span>
+                    {% else %}
+                        Not signed in.
+                    {% endif %}
+                </div>
+                <div class="logo-container">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h1 class="display-2">SLOSS CRUISERS</h1>
+                            <hr>
+                            <h6>Alabama's Land Cruiser Headquarters</h6>
+                        </div>
+                        <img src="{% static 'auctions/images/Cruiser.png' %}" alt="Cruiser image" class="logo-img"></br>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create' %}">Create Listing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'display_watchlist' %}">Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            {% endif %}
+        </ul>
+        <hr>
+        {% block body %}
+        <hr>
+        {% endblock %}
+    </body>
+</html>

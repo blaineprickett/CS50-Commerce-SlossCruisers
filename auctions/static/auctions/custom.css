@@ -1,0 +1,187 @@
+/* CSS for layout.html */
+
+/* Container Styles */
+.container {
+  max-width: 1900px !important;
+}
+
+.no-padding-margin {
+  padding: 10px;
+  margin: 0px;
+}
+
+/* Social Icon Styles */
+.social-icon {
+  height: 32px;
+  width: 32px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+/* Hover Styles for Social Icons */
+.social-icon:hover {
+  opacity: 0.5;
+}
+
+/* Hover Styles for Logo Image */
+.logo-img:hover {
+  opacity: 0.5;
+}
+
+.logo-container {
+  background-image: url("{% static 'auctions/images/tiretracks.png' %}");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Logo Image Styles */
+.logo-img {
+  width: 226px !important;
+  margin-top: auto;
+}
+
+/* Heading Styles */
+h1.ml-3 {
+  font-family: 'consolas' !important;
+}
+
+.bg-container {
+  background-color: #f0f0f0;
+}
+
+/* Logo Container Styles */
+.logo-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.signed-in {
+  margin-left: 10px;
+}
+
+/* Heading Styles */
+h2 {
+  background-color: #f0f0f0;
+  width: 100%;
+}
+
+/* Heading Styles */
+h6 {
+  font-family: 'consolas' !important;
+  margin-left: 175px !important;
+}
+
+/* Form Styles */
+form select {
+  margin-right: 5px;
+}
+
+/* Form Styles */
+form input[type="submit"] {
+  margin-left: 5px;
+}
+
+/* Listing Info Styles */
+.listing-info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+/* Listing Container Styles */
+.listing-container {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+}
+
+/* Listing Content Styles */
+.listing-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* Listing Image Styles */
+.listing-img {
+  align-content: center;
+}
+
+/* Listing Title Styles */
+.listing-title {
+  margin-left: 30px;
+}
+
+/* Bid Form Styles */
+.bid-form {
+  margin-left: 425px;
+}
+
+/* New Bid Form Styles */
+.new-bid-form {
+  display: flex;
+  align-items: center;
+}
+
+/* Bid Button Styles */
+#bid-button {
+  margin-left: 0px;
+}
+
+/* Close Auction Button Styles */
+#close-auction {
+  margin-left: 0px;
+}
+
+/* Text Center Styles */
+.text-center {
+  text-align: center;
+}
+
+/* Button Styles */
+.btn.btn-primary {
+  align-content: center;
+}
+
+/* Button Styles */
+.btn.btn-danger {
+  align-content: center;
+}
+
+/* Button Styles */
+.btn.btn-info {
+  align-content: center;
+}
+
+/* Button Center Styles */
+.btn-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logged User Paragraph Styles */
+p.logged {
+  margin-right: 10px !important;
+}
+
+/* Bid User Styles */
+.bid-user {
+  font-style: italic;
+}
+
+.pb-cmnt-container {
+  width: 100%;
+}
+
+.comment-container1 .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card-text1 {
+  color: #0099ff;
+  font-weight: bold;
+}
+
+.user.username {
+  color: #0099ff
+}
