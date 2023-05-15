@@ -2,70 +2,70 @@
 {% load humanize %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Active Listings</h2></br>
-            </div>
-        </div>
-        <div class="row">
-            <div>    
-                <form action="{% url 'display_category' %}" method="post">
-                    {% csrf_token %} 
-                    <label for="Land Cruisers">Choose a category:</label>
-                        <select name="category" class="form-select" aria-label="Default select example">
-                            <option selected><a href="#">Open this select menu</a></option>
-                            <option value="FJ40">FJ40</option>
-                            <option value="FJ55">FJ55</option>
-                            <option value="HJ60">HJ60</option>
-                            <option value="FJ60">FJ60</option>
-                            <option value="FJ70">FJ70</option>
-                            <option value="FZJ70-75">FZJ70-75</option>
-                            <option value="FJ80">FJ80</option>
-                            <option value="UZJ100">UZJ100</option>
-                            <input type="submit" value="Submit">
-                        </select>
-                    </br></br>
-                </form>
-            </div>
-        </div>
-        <div class="row">
-            {% for listing in listings %}
-                <div class="card col-sm-3 no-padding-margin">
-                    <div class="card-header">
-                        {% if listing.category == 'FJ40' %}
-                            <span class="badge badge-pill badge-warning">{{ listing.category }}</span>
-                        {% elif listing.category == 'FJ55' %}
-                            <span class="badge badge-pill badge-success">{{ listing.category }}</span>
-                        {% elif listing.category == 'FJ60' %}
-                            <span class="badge badge-pill badge-dark">{{ listing.category }}</span>
-                        {% elif listing.category == 'HJ60' %}
-                            <span class="badge badge-pill badge-light">{{ listing.category }}</span>
-                        {% elif listing.category == 'FJ70' %}
-                            <span class="badge badge-pill badge-secondary">{{ listing.category }}</span>
-                        {% elif listing.category == 'FZJ70' %}
-                            <span class="badge badge-pill badge-danger">{{ listing.category }}</span>
-                        {% elif listing.category == 'FJ80' %}
-                            <span class="badge badge-pill badge-info">{{ listing.category }}</span>
-                        {% else %}
-                            <span class="badge badge-pill badge-primary">{{ listing.category }}</span>
-                        {% endif %}
-                        <div class="text-center">
-                            {% if listing.current_bid %}
-                                <p><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span></p>
-                            {% else %}
-                                <p><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <img class="card-img-top" src="{{listing.url}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ listing.title}}</h5>
-                        <p class="card-text">{{ listing.description }}</p>
-                        <a href="{% url 'display_listing' listing.id %}" class="btn btn-primary"><b>Go to listing</b></a>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h5 class="text-center">Active Listings</h5>
+            <form action="{% url 'display_category' %}" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <select name="category" class="form-select" aria-label="Default select example">
+                        <option selected disabled>Open this select menu</option>
+                        <option value="FJ40">FJ40</option>
+                        <option value="FJ55">FJ55</option>
+                        <option value="HJ60">HJ60</option>
+                        <option value="FJ60">FJ60</option>
+                        <option value="FJ70">FJ70</option>
+                        <option value="FZJ70-75">FZJ70-75</option>
+                        <option value="FJ80">FJ80</option>
+                        <option value="UZJ100">UZJ100</option>
+                    </select>
+                    <div class="input-group-append">
+                        <input type="submit" value="Submit" class="btn btn-primary text-center">
                     </div>
                 </div>
+            </form>
+        </div>
+        {% for listing in listings %}
+        <div class="col-sm-3">
+            <div class="card mb-3">
+                <div class="card-header">
+                    {% if listing.category == 'FJ40' %}
+                    <span class="badge badge-pill badge-warning">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'FJ55' %}
+                    <span class="badge badge-pill badge-success">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'FJ60' %}
+                    <span class="badge badge-pill badge-dark">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'HJ60' %}
+                    <span class="badge badge-pill badge-light">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'FJ70' %}
+                    <span class="badge badge-pill badge-secondary">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'FZJ70' %}
+                    <span class="badge badge-pill badge-danger">{{ listing.category }}</span><br>
+                    {% elif listing.category == 'FJ80' %}
+                    <span class="badge badge-pill badge-info">{{ listing.category }}</span><br>
+                    {% else %}
+                    <span class="badge badge-pill badge-primary">{{ listing.category }}</span><br>
+                    {% endif %}<br>
+                    <h6 class="card-title">{{ listing.title }}</h6>
+                </div>
+                <img class="card-img-top" src="{{ listing.url }}" alt="Card image cap">
+                <div class="card-body">
+                    {% if listing.current_bid %}
+                    <p class="text-center"><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span></p>
+                    {% else %}
+                    <p class="text-center"><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p>
+                    {% endif %}
+                    <p class="card-text">{{ listing.description }}</p>
+                    <div class="text-center">
+                        <a href="{% url 'display_listing' listing.id %}" class="btn btn-primary"><b>Go to
+                            listing</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {% endfor %}
-        </div>        
+        </div>
     </div>
-{% endblock %}
+    {% endblock %}
+    

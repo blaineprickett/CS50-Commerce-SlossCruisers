@@ -1,20 +1,437 @@
+/* CSS for category.html */
+
+.container select {
+  margin-bottom: 10px;
+}
+
+.container input[type="submit"] {
+  margin-left: 5px;
+}
+
+.container .row {
+  margin-top: 30px;
+}
+
+.container .card {
+  margin-bottom: 20px;
+}
+
+.container .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.container .card-title {
+  font-weight: bold;
+}
+
+.container .card-text {
+  margin-bottom: 10px;
+}
+
+.container .btn-primary {
+  margin-top: 0px;
+}
+
+.container p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* End of CSS for category.html */
+
+/* CSS for create.html */
+
+.container .col-12 h5 {
+  margin-bottom: 20px;
+}
+
+.container .form-group {
+  margin-bottom: 20px;
+}
+
+.container .logo-img {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.container .float-left {
+  margin-top: 10px;
+}
+
+.container .float-right {
+  margin-top: 10px;
+}
+
+.container .form-check-label {
+  margin-right: 10px;
+}
+
+/* End of CSS for create.html */
+
+/* CSS for index.html */
+
+.container .col-12 h5 {
+  margin-bottom: 20px;
+}
+
+.container .form-group {
+  margin-bottom: 20px;
+}
+
+.container .form-group.row {
+  margin-bottom: 0;
+}
+
+.container .col-sm-auto {
+  margin-bottom: 10px;
+}
+
+.container .form-control {
+  margin-bottom: 10px;
+}
+
+.container .form-select {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.container .input-group {
+  margin-bottom: 10px;
+}
+
+.container .input-group-append {
+  margin-left: -1px;
+}
+
+.container .btn-primary {
+  margin-left: 10px;
+}
+
+.container .row .card {
+  margin-bottom: 20px;
+}
+
+.container .row .card-header {
+  margin-bottom: 10px;
+}
+
+.container .listing-current-bid {
+  font-weight: bold;
+}
+
+/* End of CSS for index.html */
+
+/* CSS for listing_page.html */
+
+.container .jumbotron {
+  background-color: #F8F9FA;
+  padding: 20px;
+}
+
+.container .jumbotron .alert-success {
+  margin-bottom: 20px;
+}
+
+.container .jumbotron .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container .jumbotron .listing-title {
+  margin-bottom: 30px;
+}
+
+.container .jumbotron .col-md-12 {
+  margin-bottom: 20px;
+}
+
+.container .jumbotron .listing-container {
+  display: flex;
+  align-items: center;
+}
+
+.container .jumbotron .listing-content {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.container .jumbotron .listing-info {
+  flex: 1;
+}
+
+.container .jumbotron .listing-info span.badge {
+  margin-right: 5px;
+}
+
+.container .jumbotron .listing-info br {
+  margin-bottom: 10px;
+}
+
+.container .jumbotron .listing-info p {
+  margin-bottom: 10px;
+}
+
+.container .jumbotron .listing-info .btn {
+  margin-top: 10px;
+}
+
+.container .comment-container1 {
+  margin-top: 30px;
+}
+
+.container .comment-container1 h2 {
+  margin-bottom: 20px;
+}
+
+.container .comment-container1 .comment {
+  margin-bottom: 30px;
+}
+
+.container .comment-container1 .comment .comment-header {
+  margin-bottom: 10px;
+}
+
+.container .comment-container1 .comment .comment-body {
+  margin-bottom: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer {
+  margin-top: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer .comment-info {
+  margin-bottom: 5px;
+}
+
+.container .comment-container1 .comment .comment-footer .comment-info span {
+  margin-right: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer .reply-link {
+  margin-left: 20px;
+}
+
+.container .comment-form {
+  margin-top: 30px;
+}
+
+.container .comment-form .form-group {
+  margin-bottom: 10px;
+}
+
+.container .comment-form textarea {
+  height: 100px;
+}
+
+.container .comment-form .submit-btn {
+  margin-top: 10px;
+}
+
+/* End of CSS for listing_page.html */
+
+/* CSS for login.html */
+
+.container .col-12 h5 {
+  margin-bottom: 20px;
+}
+
+.container .form-group {
+  margin-bottom: 20px;
+}
+
+.container .form-group.row {
+  margin-bottom: 0;
+}
+
+.container .form-control {
+  margin-bottom: 10px;
+}
+
+.container .form-check {
+  margin-bottom: 10px;
+}
+
+.container .form-check-label {
+  margin-right: 10px;
+}
+
+.container .btn-primary {
+  margin-top: 10px;
+}
+
+.container .text-center {
+  margin-top: 20px;
+}
+
+/* End of CSS for login.html */
+
+.container .comment-container1 h2 {
+  margin-bottom: 20px;
+}
+
+.container .comment-container1 .comment {
+  margin-bottom: 30px;
+}
+
+.container .comment-container1 .comment .comment-header {
+  margin-bottom: 10px;
+}
+
+.container .comment-container1 .comment .comment-body {
+  margin-bottom: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer {
+  margin-top: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer .comment-info {
+  margin-bottom: 5px;
+}
+
+.container .comment-container1 .comment .comment-footer .comment-info span {
+  margin-right: 10px;
+}
+
+.container .comment-container1 .comment .comment-footer .reply-link {
+  margin-left: 20px;
+}
+
+.container .comment-form {
+  margin-top: 30px;
+}
+
+.container .comment-form .form-group {
+  margin-bottom: 10px;
+}
+
+.container .comment-form textarea {
+  height: 100px;
+}
+
+.container .comment-form .submit-btn {
+  margin-top: 10px;
+}
+
+/* End of CSS for listing_page.html */
+
+/* CSS for layout.html */
+
+body {
+  align-content: center;
+  background-image: url('/static/auctions/images/MountainRoad.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html, body {
+  margin: 20px !important;
+  padding: 0 !important;
+}
+
 /* CSS for layout.html */
 
 /* Container Styles */
 .container {
-  max-width: 1900px !important;
+  max-width: auto;
+  margin-bottom: 20px;
+  margin: 20px;
+}
+
+.heading-container {
+  background-color: #537188;
+  position: relative;
+  padding: 3px;
+}
+
+/* Logo Container Styles */
+
+/* Logo Container Styles */
+.logo-container {
+  padding: 120px;
+  align-items: center;
 }
 
 .no-padding-margin {
-  padding: 10px;
+  padding: 0px;
   margin: 0px;
 }
+
+.nav-item {
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #f8f9fa; /* Set the desired background color */
+  padding: 20px; /* Adjust the padding as needed */
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+
+.nav-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-container li {
+  display: inline-block;
+  margin-right: 75px; /* Adjust the margin as needed */
+}
+
+.nav-container a {
+  background-image: linear-gradient(
+    to right,
+    #EEEEEE,
+    #EEEEEE 50%,
+    #000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-container a:before {
+  content: '';
+  background: #EEEEEE;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-container a:hover {
+  background-position: 0;
+ }
+
+.nav-container a:hover::before {
+  width:100%;
+}
+
+
 
 /* Social Icon Styles */
 .social-icon {
   height: 32px;
   width: 32px;
-  margin-right: 5px;
+  margin-right: 15px;
+  margin-left: 5px;
   margin-top: 5px;
 }
 
@@ -28,57 +445,46 @@
   opacity: 0.5;
 }
 
-.logo-container {
-  background-image: url("{% static 'auctions/images/tiretracks.png' %}");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 /* Logo Image Styles */
 .logo-img {
   width: 226px !important;
   margin-top: auto;
 }
 
-/* Heading Styles */
-h1.ml-3 {
-  font-family: 'consolas' !important;
-}
-
-.bg-container {
-  background-color: #f0f0f0;
-}
-
-/* Logo Container Styles */
-.logo-container {
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
 .signed-in {
-  margin-left: 10px;
+  margin-left: 25px;
+}
+
+h1 {
+  color: #EEEEEE;
 }
 
 /* Heading Styles */
-h2 {
-  background-color: #f0f0f0;
+h5 {
+  color: #EEEEEE;
+  background-color: #537188;
   width: 100%;
+  padding: 1px;
+  text-align: center;
 }
 
 /* Heading Styles */
 h6 {
-  font-family: 'consolas' !important;
-  margin-left: 175px !important;
+  text-align: center;
 }
 
 /* Form Styles */
 form select {
-  margin-right: 5px;
+  margin-right: 0px;
 }
 
 /* Form Styles */
 form input[type="submit"] {
   margin-left: 5px;
+}
+
+.btn btn-primary text-center {
+  margin-bottom: 25px;
 }
 
 /* Listing Info Styles */
@@ -87,101 +493,49 @@ form input[type="submit"] {
   margin-left: 10px;
 }
 
-/* Listing Container Styles */
 .listing-container {
-  display: flex;
-  margin-left: 10px;
-  align-items: center;
+  display: flex; /* Display the listing containers as a flex container */
+  flex-wrap: wrap; /* Allow the listing cards to wrap to a new line when there isn't enough space */
+  justify-content: space-between; /* Distribute the listing cards evenly along the horizontal axis */
+  margin-top: 0px;
 }
 
-/* Listing Content Styles */
-.listing-content {
-  flex: 1;
-  margin-right: 10px;
+.listing-card {
+  width: calc(25% - 20px); /* Adjust the width as per your preference */
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-/* Listing Image Styles */
-.listing-img {
-  align-content: center;
-}
-
-/* Listing Title Styles */
-.listing-title {
-  margin-left: 30px;
-}
-
-/* Bid Form Styles */
-.bid-form {
-  margin-left: 425px;
-}
-
-/* New Bid Form Styles */
-.new-bid-form {
-  display: flex;
-  align-items: center;
-}
-
-/* Bid Button Styles */
-#bid-button {
-  margin-left: 0px;
-}
-
-/* Close Auction Button Styles */
-#close-auction {
-  margin-left: 0px;
-}
-
-/* Text Center Styles */
-.text-center {
-  text-align: center;
-}
-
-/* Button Styles */
-.btn.btn-primary {
-  align-content: center;
-}
-
-/* Button Styles */
-.btn.btn-danger {
-  align-content: center;
-}
-
-/* Button Styles */
-.btn.btn-info {
-  align-content: center;
-}
-
-/* Button Center Styles */
-.btn-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Logged User Paragraph Styles */
-p.logged {
-  margin-right: 10px !important;
-}
-
-/* Bid User Styles */
-.bid-user {
-  font-style: italic;
-}
-
-.pb-cmnt-container {
+.listing-card img {
   width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
-.comment-container1 .container {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.card-text1 {
-  color: #0099ff;
+.listing-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
   font-weight: bold;
 }
 
-.user.username {
-  color: #0099ff
+.listing-card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888888;
+}
+
+.listing-card .btn {
+  margin-top: 10px;
+}
+
+.listing-card .badge {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .listing-card {
+    width: calc(50% - 20px);
+  }
 }

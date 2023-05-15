@@ -125,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Adjust the path according to your project's structure
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'auctions', 'static'),
 ]
