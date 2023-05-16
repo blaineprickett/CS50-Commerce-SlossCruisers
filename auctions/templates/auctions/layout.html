@@ -12,7 +12,7 @@
     <link href="{% static 'auctions/custom.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="heading-container">
             <div class="float-right">
                 <img src="{% static 'auctions/images/facebook.png' %}" class="social-icon">
@@ -20,11 +20,13 @@
                 <img src="{% static 'auctions/images/tiktok.png' %}" class="social-icon">
                 <img src="{% static 'auctions/images/twitter-sign.png' %}" class="social-icon">
                 <br>
+                <div class="signed-in">
                 {% if user.is_authenticated %}
                     <span class="signed-in">Signed in as <strong>{{ user.username }}</strong></span>
                 {% else %}
                     Not signed in.
                 {% endif %}
+                </div>
             </div>
             <div class="banner">
                 <div class="logo-container" style="background-image: url('/static/auctions/images/test4.png'); background-size: cover; background-position: 40% 46%;"></div>

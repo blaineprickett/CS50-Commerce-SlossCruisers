@@ -19,7 +19,7 @@ urlpatterns = [
     path("display_watchlist", views.display_watchlist, name="display_watchlist"),
     path("closed_listings", views.closed_listings, name="closed_listings"),
     path("<int:listing_id>/close_auction", views.close_auction, name="close_auction"),
-    path("display_category", views.display_category, name="display_category")
+    path("display_category", views.display_category, name="display_category"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -2,123 +2,112 @@
 {% load humanize %}
 
 {% block body %}
+<div class="container-fluid common-width">
+	<h5>Listing</h5>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="container-fluid common-width">
+				<br><h4>{{ listing.title }}</h4><br>
+				<div class="row">
+					<div class="listing-container">
+						<div class="listing-content">
+							<img src="{{ listing.url }}" alt="Listing picture" class="listing-img">
+						</div>
+						<div class="listing-info">
+							<br><br>
+							{% if listing.category == 'FJ40' %}
+								<span class="badge badge-pill badge-warning">{{ listing.category }}</span>
+							{% elif listing.category == 'FJ55' %}
+								<span class="badge badge-pill badge-success">{{ listing.category }}</span>
+							{% elif listing.category == 'FJ60' %}
+								<span class="badge badge-pill badge-dark">{{ listing.category }}</span>
+							{% elif listing.category == 'HJ60' %}
+								<span class="badge badge-pill badge-light">{{ listing.category }}</span>
+							{% elif listing.category == 'FJ70' %}
+								<span class="badge badge-pill badge-secondary">{{ listing.category }}</span>
+							{% elif listing.category == 'FZJ70-75' %}
+								<span class="badge badge-pill badge-danger">{{ listing.category }}</span>
+							{% elif listing.category == 'FJ80' %}
+								<span class="badge badge-pill badge-info">{{ listing.category }}</span>
+							{% else %}
+								<span class="badge badge-pill badge-primary">{{ listing.category }}</span>
+							{% endif %}
+							<br><br>
+							<p><b>Description:</b> {{ listing.description }}</p>
+							<br><p><b>Owner:</b> {{ listing.owner }}</p>
+							{% if user in listing.watchlist.all %}
+								<form action="{% url 'remove_watchlist' listing.id %}" method="post" style="display: inline-block;">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-danger">Remove from watchlist</button>
+								</form>
+							{% else %}
+								<form action="{% url 'add_watchlist' listing.id %}" method="post" style="display: inline-block;">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-primary">Add to watchlist</button>
+								</form>
+							{% endif %}
 
-<div class="jumbotron jumbotron-fluid">
-  {% if listing.is_closed and user == listing.bid.user %}
-    <div class="alert alert-success" role="alert">
-      Congratulations {{ listing.bid.user }}, you won the auction!
-    </div>
-  {% endif %}
+							{% if is_owner and not listing.is_closed %}
+								<a class="btn btn-info" id="close-auction" style="display: inline-block; margin-left: 10px;" href="{% url 'close_auction' listing.id %}">Close auction</a>
+							{% endif %}
 
-  <div class="container">
-    <div class="listing-title">
-      <h1>{{ listing.title }}</h1>
-    </div>
-    <div class="col-md-12">
-      <div class="listing-container">
-        <div class="listing-content">
-          <center><img src="{{ listing.url }}" alt="Listing picture" class="listing-img"></center>
-        </div>
-        <div class="listing-info">
-          {% if listing.category == 'FJ40' %}
-              <span class="badge badge-pill badge-warning">{{ listing.category }}</span>
-          {% elif listing.category == 'FJ55' %}
-              <span class="badge badge-pill badge-success">{{ listing.category }}</span>
-          {% elif listing.category == 'FJ60' %}
-              <span class="badge badge-pill badge-dark">{{ listing.category }}</span>
-          {% elif listing.category == 'HJ60' %}
-              <span class="badge badge-pill badge-light">{{ listing.category }}</span>
-          {% elif listing.category == 'FJ70' %}
-              <span class="badge badge-pill badge-secondary">{{ listing.category }}</span>
-          {% elif listing.category == 'FZJ70-75' %}
-              <span class="badge badge-pill badge-danger">{{ listing.category }}</span>
-          {% elif listing.category == 'FJ80' %}
-              <span class="badge badge-pill badge-info">{{ listing.category }}</span>
-          {% else %}
-              <span class="badge badge-pill badge-primary">{{ listing.category }}</span>
-          {% endif %}
-          <br><br>
-          <p><b>Description:</b> {{ listing.description }}</p>
-          <p><b>Owner:</b> {{ listing.owner }}</p>
+							<br><br><br>
 
-          {% if user in listing.watchlist.all %}
-            <form action="{% url 'remove_watchlist' listing.id %}" method="post" style="display: inline-block;">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-danger">Remove from watchlist</button>
-            </form>
-          {% else %}
-            <form action="{% url 'add_watchlist' listing.id %}" method="post" style="display: inline-block;">
-              {% csrf_token %}
-              <button type="submit" class="btn btn-primary">Add to watchlist</button>
-            </form>
-          {% endif %}
-
-          {% if is_owner and not listing.is_closed %}
-              <a class="btn btn-info" id="close-auction" style="display: inline-block; margin-left: 10px;" href="{% url 'close_auction' listing.id %}">Close auction</a>
-          {% endif %}
-
-        
-
-          <br><br>
-
-          {% if listing.current_bid %}
-              <p><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span> from <span class="bid-user">{{ listing.owner.username }}</span></p>
-          {% else %}
-              <p><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p>
-          {% endif %}
-
-          {% if user.is_authenticated and not listing.is_closed %}
-          <form action="{% url 'new_bid' listing.id %}" method="POST" class="new-bid-form">
-            {% csrf_token %}
-            <div class="form-inline"> <!-- Added 'form-inline' class here -->
-              <label for="exampleFormControlInput1" class="mr-2"><b>New bid:</b></label> <!-- Added 'mr-2' class here -->
-              <input type="text" class="form-control mr-2" id="exampleFormControlInput1" name="bid"> <!-- Added 'mr-2' class here -->
-              <button class="btn btn-primary" id="bid-button" type="submit">Make a new bid</button>
-            </div>
-          </form>
-        {% endif %}
-        
-        </div>
-      </div>
-    </div>
-  </div>
+							{% if listing.current_bid %}
+								<p><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span> from <span class="bid-user">{{ listing.owner.username }}</span></p>
+							{% else %}
+								<p><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p>
+							{% endif %}
+							{% if user.is_authenticated and not listing.is_closed %}
+								<form action="{% url 'new_bid' listing.id %}" method="POST" class="new-bid-form">
+									{% csrf_token %}
+									<div class="form-inline">
+										<label for="exampleFormControlInput1" class="mr-2"><b>New bid:</b></label>
+										<input type="text" class="form-control mr-2" id="exampleFormControlInput1" name="bid">
+										<button class="btn btn-primary" id="bid-button" type="submit">Make a new bid</button>
+									</div>
+								</form>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="comment-container1">
-  <h2>Comments</h2>
-  <form action="{% url 'comment' listing.id %}" method="POST">
-    {% csrf_token %}
-    <div class="container pb-cmnt-container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <textarea name="content" class="pb-cmnt-textarea w-100" placeholder="Write your comment here!" rows="3"></textarea>
-              <div class="form-group">
-                <button class="btn btn-outline-primary float-right" type="submit">Comment</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
-
-  <div class="comment-container2">
-    {% if comments %}
-      {% for comment in comments %}
-        <div class="card my-3">
-          <div class="card-body">
-            <p class="card-text1">{{ comment.content }}</p>
-            <p class="card-subtitle mb-2 text-muted">Posted by <b>{{ comment.user.username }}</b> on <i>{{ comment.timestamp }}</i></p>
-          </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No comments yet.</p>
-    {% endif %}
-  </div>
+<div class="container-fluid common-width">
+	<br><h5>Comments</h5><br>
+	<div class="row">
+		<div class="col-md-12">
+			<form action="{% url 'comment' listing.id %}" method="POST">
+				{% csrf_token %}
+				<div class="card">
+					<div class="card-body">
+						<textarea name="content" class="pb-cmnt-textarea w-100" placeholder="Write your comment here!" rows="3"></textarea>
+						<div class="form-group">
+							<button class="btn btn-outline-primary float-right" type="submit">Comment</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
+<div class="container-fluid common-width">
+	{% if comments %}
+		{% for comment in comments %}
+		<div class="card my-3">
+			<div class="card-body">
+				<p class="card-text1">{{ comment.content }}</p>
+				<p class="card-subtitle mb-2 text-muted">Posted by <b>{{ comment.user.username }}</b> on <i>{{ comment.timestamp }}</i></p>
+			</div>
+		</div>
+		{% endfor %}
+	{% else %}
+		<center><p>No comments yet.</p></center>
+	{% endif %}
+</div>
 
 {% endblock %}

@@ -2,70 +2,80 @@
 {% load humanize %}
 
 {% block body %}
-    <div class="container">
-        <h5>Active Listings in {{ category }} category</h5>
-        <br>
-        <form action="{% url 'display_category' %}" method="post">
-            {% csrf_token %}
-            <label for="category">Choose a category:</label>
-            <select name="category" class="form-select" aria-label="Default select example">
-                <option selected disabled>Open this select menu</option>
-                <option value="FJ40">FJ40</option>
-                <option value="FJ55">FJ55</option>
-                <option value="HJ60">HJ60</option>
-                <option value="FJ60">FJ60</option>
-                <option value="FJ70">FJ70</option>
-                <option value="FZJ70">FZJ70</option>
-                <option value="FJ80">FJ80</option>
-                <option value="UZJ100">UZJ100</option>
-            </select>
-            <input type="submit" value="Submit" class="btn btn-primary">
-        </form>
-        <div class="container">
-            <div class="row">
-                {% for listing in listings %}
-                    <div class="col-sm-3">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                {% if listing.category == 'FJ40' %}
-                                    <span class="badge badge-pill badge-warning">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'FJ55' %}
-                                    <span class="badge badge-pill badge-success">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'FJ60' %}
-                                    <span class="badge badge-pill badge-dark">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'HJ60' %}
-                                    <span class="badge badge-pill badge-light">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'FJ70' %}
-                                    <span class="badge badge-pill badge-secondary">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'FZJ70' %}
-                                    <span class="badge badge-pill badge-danger">{{ listing.category }}</span><br>
-                                {% elif listing.category == 'FJ80' %}
-                                    <span class="badge badge-pill badge-info">{{ listing.category }}</span><br>
-                                {% else %}
-                                    <span class="badge badge-pill badge-primary">{{ listing.category }}</span><br>
-                                {% endif %}<br>
-                                <center><h6 class="card-title">{{ listing.title }}</h6></center>
-                            </div>
-                            <img class="card-img-top" src="{{ listing.url }}" alt="{{ listing.title }}">
-                            <div class="card-body">
-                                {% if listing.current_bid %}
-                                    <center><p><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span></p></center>
-                                {% else %}
-                                    <p><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p>
-                                {% endif %}
-                                <p class="card-text">{{ listing.description }}</p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <a href="{% url 'display_listing' listing_id=listing.id %}" class="btn btn-primary">Details</a>
-                                <form action="{% url 'remove_watchlist' listing_id=listing.id %}" method="post">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-outline-danger">Remove from Watchlist</button>
-                                </form>
+<div class="container-fluid">
+    <h5 class="mb-4 text-center">Active {{ category }} models</h5>
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="{% url 'display_category' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group row align-items-center">
+                    <div class="col-sm">
+                        <div class="input-group">
+                            <select name="category" class="form-select" aria-label="Default select example">
+                                <option selected disabled>Select a Land Cruiser model</option>
+                                <option value="FJ40">FJ40</option>
+                                <option value="FJ55">FJ55</option>
+                                <option value="HJ60">HJ60</option>
+                                <option value="FJ60">FJ60</option>
+                                <option value="FJ70">FJ70</option>
+                                <option value="FZJ70-75">FZJ70-75</option>
+                                <option value="FJ80">FJ80</option>
+                                <option value="UZJ100">UZJ100</option>
+                            </select>
+                            <div class="input-group-append">
+                                <input type="submit" value="Submit" class="btn btn-primary">
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>    
+<div class="container-fluid">
+    <div class="row">
+        {% for listing in listings %}
+            <div class="col-sm-3">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        {% if listing.category == 'FJ40' %}
+                            <span class="badge badge-pill badge-warning">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'FJ55' %}
+                            <span class="badge badge-pill badge-success">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'FJ60' %}
+                            <span class="badge badge-pill badge-dark">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'HJ60' %}
+                            <span class="badge badge-pill badge-light">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'FJ70' %}
+                            <span class="badge badge-pill badge-secondary">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'FZJ70' %}
+                            <span class="badge badge-pill badge-danger">{{ listing.category }}</span><br>
+                        {% elif listing.category == 'FJ80' %}
+                            <span class="badge badge-pill badge-info">{{ listing.category }}</span><br>
+                        {% else %}
+                            <span class="badge badge-pill badge-primary">{{ listing.category }}</span><br>
+                        {% endif %}<br>
+                        <center><h6 class="card-title">{{ listing.title }}</h6></center>
+                    </div>
+                    <img class="card-img-top" src="{{ listing.url }}" alt="{{ listing.title }}">
+                    <div class="card-body">
+                        {% if listing.current_bid %}
+                            <center><p><b>{{ listing.get_bid_status }}</b> <span class="listing-current-bid" style="color: red; font-weight: bold;">${{ listing.current_bid|intcomma }}</span></p></center>
+                        {% else %}
+                            <center><p><b>Opening Bid:</b> ${{ listing.opening_bid|intcomma }}</p></center>
+                        {% endif %}
+                        <p class="card-text">{{ listing.description }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="{% url 'display_listing' listing_id=listing.id %}" class="btn btn-primary">Details</a>
+                        <form action="{% url 'remove_watchlist' listing_id=listing.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-danger">Remove from Watchlist</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

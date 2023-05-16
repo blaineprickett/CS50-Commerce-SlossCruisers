@@ -9,17 +9,13 @@
 }
 
 .container .row {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 
 .container .card {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
-.container .card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
 
 .container .card-title {
   font-weight: bold;
@@ -47,7 +43,7 @@
 }
 
 .container .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .container .logo-img {
@@ -72,20 +68,12 @@
 
 /* CSS for index.html */
 
-.container .col-12 h5 {
-  margin-bottom: 20px;
-}
-
-.container .form-group {
-  margin-bottom: 20px;
+.cruiser:hover {
+  position: right 35% !important;
 }
 
 .container .form-group.row {
   margin-bottom: 0;
-}
-
-.container .col-sm-auto {
-  margin-bottom: 10px;
 }
 
 .container .form-control {
@@ -94,27 +82,23 @@
 
 .container .form-select {
   margin-bottom: 10px;
-  margin-left: 10px;
 }
 
 .container .input-group {
   margin-bottom: 10px;
 }
 
-.container .input-group-append {
-  margin-left: -1px;
-}
-
 .container .btn-primary {
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .container .row .card {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .container .row .card-header {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .container .listing-current-bid {
@@ -126,7 +110,7 @@
 /* CSS for listing_page.html */
 
 .container .jumbotron {
-  background-color: #F8F9FA;
+  background-color: #EEEEEE;
   padding: 20px;
 }
 
@@ -177,48 +161,14 @@
   margin-top: 10px;
 }
 
-.container .comment-container1 {
-  margin-top: 30px;
-}
 
-.container .comment-container1 h2 {
-  margin-bottom: 20px;
-}
-
-.container .comment-container1 .comment {
-  margin-bottom: 30px;
-}
-
-.container .comment-container1 .comment .comment-header {
-  margin-bottom: 10px;
-}
-
-.container .comment-container1 .comment .comment-body {
-  margin-bottom: 10px;
-}
-
-.container .comment-container1 .comment .comment-footer {
-  margin-top: 10px;
-}
-
-.container .comment-container1 .comment .comment-footer .comment-info {
-  margin-bottom: 5px;
-}
-
-.container .comment-container1 .comment .comment-footer .comment-info span {
-  margin-right: 10px;
-}
-
-.container .comment-container1 .comment .comment-footer .reply-link {
-  margin-left: 20px;
-}
 
 .container .comment-form {
-  margin-top: 30px;
+  margin-top: 5px;
 }
 
 .container .comment-form .form-group {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .container .comment-form textarea {
@@ -226,7 +176,7 @@
 }
 
 .container .comment-form .submit-btn {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 /* End of CSS for listing_page.html */
@@ -266,53 +216,140 @@
 }
 
 /* End of CSS for login.html */
+/* CSS for listing_page.html */
 
-.container .comment-container1 h2 {
+/* Container Styles */
+.container {
+  max-width: 1900px !important;
+}
+
+.jumbotron {
+  background-color: #EEEEEE;
+  padding: 20px;
+}
+
+.jumbotron .alert-success {
   margin-bottom: 20px;
 }
 
-.container .comment-container1 .comment {
+.jumbotron .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.jumbotron .listing-title {
   margin-bottom: 30px;
 }
 
-.container .comment-container1 .comment .comment-header {
-  margin-bottom: 10px;
+.jumbotron .col-md-12 {
+  margin-bottom: 20px;
 }
 
-.container .comment-container1 .comment .comment-body {
-  margin-bottom: 10px;
+.jumbotron .listing-container {
+  display: flex;
+  align-items: center;
 }
 
-.container .comment-container1 .comment .comment-footer {
-  margin-top: 10px;
-}
-
-.container .comment-container1 .comment .comment-footer .comment-info {
-  margin-bottom: 5px;
-}
-
-.container .comment-container1 .comment .comment-footer .comment-info span {
+.jumbotron .listing-content {
+  flex: 1;
   margin-right: 10px;
 }
 
-.container .comment-container1 .comment .comment-footer .reply-link {
-  margin-left: 20px;
+.jumbotron .listing-info {
+  flex: 1;
 }
 
-.container .comment-form {
-  margin-top: 30px;
+.jumbotron .listing-info span.badge {
+  margin-right: 5px;
 }
 
-.container .comment-form .form-group {
+.jumbotron .listing-info br {
   margin-bottom: 10px;
 }
 
-.container .comment-form textarea {
-  height: 100px;
+.jumbotron .listing-info p {
+  margin-bottom: 10px;
 }
 
-.container .comment-form .submit-btn {
+.jumbotron .listing-info .btn {
   margin-top: 10px;
+}
+
+.comment-container1 {
+  margin-top: 0rem;
+}
+
+.comment-container2 {
+  margin-top: 0rem;
+}
+
+.card-body2 {
+  padding: 0.75rem;
+}
+
+.card-text1 {
+  margin-bottom: 0;
+}
+
+.card-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.listing-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.listing-content {
+  flex: 1;
+}
+
+.listing-info {
+  flex: 1;
+}
+
+.listing-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.listing-info p {
+  margin-bottom: 0.5rem;
+}
+
+.new-bid-form {
+  margin-top: 1rem;
+}
+
+.pb-cmnt-container {
+  margin-top: 2rem;
+}
+
+.pb-cmnt-textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #eeeeee;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.listing-container {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .listing-card {
+    width: calc(50% - 20px);
+  }
 }
 
 /* End of CSS for listing_page.html */
@@ -325,20 +362,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-html, body {
-  margin: 20px !important;
-  padding: 0 !important;
+  background-position: bottom;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 40px;
 }
 
 /* CSS for layout.html */
 
 /* Container Styles */
 .container {
-  max-width: auto;
-  margin-bottom: 20px;
-  margin: 20px;
+  max-width: 1900px !important;
 }
 
 .heading-container {
@@ -347,7 +381,10 @@ html, body {
   padding: 3px;
 }
 
-/* Logo Container Styles */
+/* Signed In or Out Position */
+.signed-in {
+  margin-left: 35px;
+}
 
 /* Logo Container Styles */
 .logo-container {
@@ -369,12 +406,12 @@ html, body {
   justify-content: center;
   padding: 0px;
   text-align: center;
-  margin-top: 20px;
-  background-color: #f8f9fa; /* Set the desired background color */
-  padding: 20px; /* Adjust the padding as needed */
-  margin-bottom: 20px; /* Adjust the margin as needed */
+  margin-top: 10px;
+  background-color: #CBB279; /* Set the desired background color */
+  padding: 10px; /* Adjust the padding as needed */
+  margin-bottom: 10px; /* Adjust the margin as needed */
+    
 }
-
 
 .nav-container ul {
   list-style: none;
@@ -424,14 +461,13 @@ html, body {
   width:100%;
 }
 
-
-
 /* Social Icon Styles */
 .social-icon {
   height: 32px;
   width: 32px;
-  margin-right: 15px;
-  margin-left: 5px;
+  gap: 10px; /* Adjust the value as needed */
+  margin-right: 5px;
+  margin-left: 15px;
   margin-top: 5px;
 }
 
@@ -449,10 +485,6 @@ html, body {
 .logo-img {
   width: 226px !important;
   margin-top: auto;
-}
-
-.signed-in {
-  margin-left: 25px;
 }
 
 h1 {
@@ -493,25 +525,13 @@ form input[type="submit"] {
   margin-left: 10px;
 }
 
-.listing-container {
-  display: flex; /* Display the listing containers as a flex container */
-  flex-wrap: wrap; /* Allow the listing cards to wrap to a new line when there isn't enough space */
-  justify-content: space-between; /* Distribute the listing cards evenly along the horizontal axis */
-  margin-top: 0px;
-}
 
 .listing-card {
   width: calc(25% - 20px); /* Adjust the width as per your preference */
   margin-bottom: 20px;
-  background-color: #f7f7f7;
+  background-color: #EEEEEE;
   border-radius: 5px;
   padding: 10px;
-}
-
-.listing-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
 }
 
 .listing-card h3 {
