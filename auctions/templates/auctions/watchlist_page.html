@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="container-fluid">
-    <h5 class="mb-4 text-center">Active Listings</h5>
+    <h5 class="mb-4 text-center">Watchlist</h5>
     <div class="row">
         <div class="col-sm-12">
             <form action="{% url 'display_category' %}" method="post">
@@ -25,7 +25,11 @@
                             </select>
                             <div class="input-group-append">
                                 <input type="submit" value="Submit" class="btn btn-primary">
-                                <img src="{% static 'auctions/images/cruiser3.png' %}">
+                                <div class="container-cruiser">
+                                    <div class="child move">
+                                        <img src="{% static 'auctions/images/cruiser3.png' %}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

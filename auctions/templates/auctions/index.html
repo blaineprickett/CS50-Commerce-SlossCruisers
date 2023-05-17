@@ -25,8 +25,10 @@
                             </select>
                             <div class="input-group-append">
                                 <input type="submit" value="Submit" class="btn btn-primary">
-                                <div class="cruiser">
-                                <img src="{% static 'auctions/images/cruiser3.png' %}">
+                                <div class="container-cruiser">
+                                    <div class="child move">
+                                        <img src="{% static 'auctions/images/cruiser3.png' %}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -72,10 +74,6 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <a href="{% url 'display_listing' listing_id=listing.id %}" class="btn btn-primary">Details</a>
-                        <form action="{% url 'remove_watchlist' listing_id=listing.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-outline-danger">Remove from Watchlist</button>
-                        </form>
                     </div>
                 </div>
             </div>

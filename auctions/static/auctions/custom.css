@@ -68,8 +68,27 @@
 
 /* CSS for index.html */
 
-.cruiser:hover {
-  position: right 35% !important;
+.container-cruiser {
+  display: flex;
+}
+
+.child {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+
+.move:hover {
+  animation-name: move;
+    animation-timing-function: ease;
+}
+
+@keyframes move {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateX(500px); 
+}
+  100% { transform: translateX(0); }
 }
 
 .container .form-group.row {

@@ -68,10 +68,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between">
                         <a href="{% url 'display_listing' listing_id=listing.id %}" class="btn btn-primary">Details</a>
-                        <form action="{% url 'remove_watchlist' listing_id=listing.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-outline-danger">Remove from Watchlist</button>
-                        </form>
+                        {% if user.is_authenticated %}
+                            {% if user == listing.user %}
+                                <a href="{% url 'close_listing' listing_id=listing.id %}" class="btn btn-danger">Close</a>
+                            {% else %}
+                                <a href="{% url 'add_watchlist' listing_id=listing.id %}" class="btn btn-success">Add to Watchlist</a>
+                            {% endif %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
