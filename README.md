@@ -1,6 +1,21 @@
 # Django-SlossCruisers
 Django Auction Project - CS50's Web Programming with Python and JavaScript
-
+C:.
+├───.vscode
+├───auctions
+│   ├───migrations
+│   │   └───__pycache__
+│   ├───static      
+│   │   └───auctions
+│   │       └───images
+│   ├───templates       
+│   │   └───auctions    
+│   └───__pycache__     
+├───bootstrap-4.4.1-dist
+│   ├───css
+│   └───js
+└───commerce
+    └───__pycache__
 ---
 
 SLOSS CRUISERS is an eBay-like e-commerce auction site for Land Cruisers allowing users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.” This site was inspired by my favorite automobile auction website: https://BringATrailer.com 
