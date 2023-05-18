@@ -9,3 +9,7 @@ This site was created using Python, Django framework, SQLite, and Bootstrap 4.4.
 
 
 ![SlossCruisers-Screenshot](https://github.com/blaineprickett/Django-SlossCruisers/assets/109476886/857689cf-cdb4-4408-b671-bff055e4a227)
+
+
+https://github.com/blaineprickett/Django-SlossCruisers/assets/109476886/af43477f-ade2-4067-a68a-cd7385a13357
+
